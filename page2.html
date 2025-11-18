@@ -4,130 +4,281 @@
   <meta charset="utf-8">
   <title>Emergencies — HealthSpecialist</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="style.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="bg-[#F5FAFF] text-slate-900">
 
-<header class="site-header">
-  <div class="container">
-    <div class="nav-pill">
-      <a class="logo" href="index.html">
-        <img src="img/logo.png" alt="Logo">
-      </a>
+  <header class="py-4">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="bg-[#4593FF] text-white rounded-full px-6 py-3 shadow flex items-center justify-between">
+        <a href="index.html" class="flex items-center space-x-2">
+          <img src="img/logo.png" alt="HealthSpecialist logo" class="h-7 w-auto">
+        </a>
 
-      <nav class="menu-desktop" aria-label="Main navigation">
-        <a href="index.html">HOME</a>
-        <a href="#">ABOUT</a>
-        <a href="#">SERVICES</a>
-        <div class="has-dd">
-          <a class="dd-toggle" href="#">DOCTORS</a>
-          <ul class="dropdown">
-            <li><a href="#">Phillis K Vance MD</a></li>
-            <li><a href="#">Stanley K Hudson MD</a></li>
-            <li><a href="#">Kevin D Malone MD</a></li>
-            <li><a href="#">Angela S Martin MD</a></li>
+        <nav class="hidden md:flex items-center space-x-6 text-xs font-semibold uppercase tracking-wide">
+          <a href="index.html" class="hover:text-[#F6FAFF] transition">Home</a>
+          <a href="#" class="hover:text-[#F6FAFF] transition">About</a>
+          <a href="#" class="hover:text-[#F6FAFF] transition">Services</a>
+
+          <div class="relative group">
+            <button class="flex items-center space-x-1 hover:text-[#F6FAFF] transition">
+              <span>DOCTORS</span>
+              <svg class="w-3 h-3" viewBox="0 0 10 6" aria-hidden="true">
+                <path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+            <ul class="absolute right-0 mt-2 w-56 bg-white text-slate-700 rounded-xl border border-[#C4DEFF] shadow-lg hidden group-hover:block">
+              <li><a href="#" class="block px-3 py-2 text-xs hover:bg-[#F6FAFF] rounded-t-xl">Phillis K Vance MD</a></li>
+              <li><a href="#" class="block px-3 py-2 text-xs hover:bg-[#F6FAFF]">Stanley K Hudson MD</a></li>
+              <li><a href="#" class="block px-3 py-2 text-xs hover:bg-[#F6FAFF]">Kevin D Malone MD</a></li>
+              <li><a href="#" class="block px-3 py-2 text-xs hover:bg-[#F6FAFF] rounded-b-xl">Angela S Martin MD</a></li>
+            </ul>
+          </div>
+
+          <a href="#" class="hover:text-[#F6FAFF] transition">Contact</a>
+        </nav>
+
+        <div class="hidden md:flex items-center space-x-3 text-xs font-semibold uppercase tracking-wide">
+          <a href="#" class="hover:text-[#F6FAFF] transition">Log in</a>
+          <a href="#" class="inline-flex items-center px-4 py-2 rounded-full bg-white text-[#4593FF] hover:bg-[#F6FAFF] transition">
+            Sign up
+          </a>
+        </div>
+
+        <button
+          id="mobile-menu-btn"
+          class="md:hidden inline-flex items-center justify-center rounded-full border border-white/60 px-3 py-1.5 text-sm"
+          aria-label="Toggle menu"
+        >
+          ☰
+        </button>
+      </div>
+
+      <div id="mobile-menu" class="md:hidden hidden mt-3 bg-[#4593FF] text-white rounded-3xl px-6 py-3 text-sm">
+        <div class="space-y-2 font-medium">
+          <a href="index.html" class="block py-1 text-white/90 hover:text-white">Home</a>
+          <a href="#" class="block py-1 text-white/90 hover:text-white">About</a>
+          <a href="#" class="block py-1 text-white/90 hover:text-white">Services</a>
+
+          <details>
+            <summary class="flex items-center justify-between py-1 cursor-pointer text-white/90 hover:text-white">
+              <span>Doctors</span>
+              <span class="text-xs text-white/80">▼</span>
+            </summary>
+            <div class="mt-1 pl-3 space-y-1 text-white/90">
+              <a href="#" class="block text-xs py-1">Phillis K Vance MD</a>
+              <a href="#" class="block text-xs py-1">Stanley K Hudson MD</a>
+              <a href="#" class="block text-xs py-1">Kevin D Malone MD</a>
+              <a href="#" class="block text-xs py-1">Angela S Martin MD</a>
+            </div>
+          </details>
+
+          <a href="#" class="block py-1 text-white/90 hover:text-white">Contact</a>
+
+          <div class="pt-2 flex items-center space-x-3">
+            <a href="#" class="text-xs font-semibold uppercase text-white/90 hover:text-white">Log in</a>
+            <a href="#" class="inline-flex flex-1 items-center justify-center px-4 py-2 rounded-full bg-white text-xs font-semibold uppercase text-[#4593FF] hover:bg-[#F6FAFF] transition">
+              Sign up
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="bg-white">
+    <section class="max-w-6xl mx-auto px-4 pt-8 pb-10">
+      <div class="grid gap-10 lg:grid-cols-2 items-center">
+        <div class="space-y-6">
+          <div class="space-y-3">
+            <h1 class="text-3xl sm:text-4xl font-semibold text-slate-900">
+              Emergency Care
+            </h1>
+            <p class="text-sm sm:text-base text-slate-600 max-w-xl">
+              Our emergency unit operates around the clock. If a situation is life-threatening, call 103 immediately. We coordinate ambulance arrival and fast-track admission to our ER.
+            </p>
+          </div>
+
+          <div class="flex flex-wrap gap-3 pt-2">
+            <a href="tel:103" class="inline-flex items-center justify-center rounded-md bg-[#4593FF] px-6 py-2.5 text-sm font-semibold text-white shadow hover:bg-[#2f7df5] transition">
+              Call 103
+            </a>
+
+            <a href="tel:+14041234567" class="inline-flex items-center justify-center rounded-md border border-[#4593FF] px-6 py-2.5 text-sm font-semibold text-[#4593FF] bg-white hover:bg-[#F6FAFF] transition">
+              Clinic hotline (404) 123–4567
+            </a>
+          </div>
+
+          <p class="text-xs text-slate-500 flex items-center space-x-2 pt-1">
+            <span class="inline-flex h-4 w-4 items-center justify-center rounded-full text-[11px] text-white bg-[#4593FF]">
+              i
+            </span>
+            <span>We will guide you through the next steps and prepare our team before you arrive.</span>
+          </p>
+
+          <div class="mt-6 sm:hidden">
+            <div class="relative rounded-xl overflow-hidden">
+              <img src="img/main2.png" alt="Ambulance illustration" class="w-full h-full object-cover">
+              <div class="absolute inset-x-0 bottom-0 px-4 pb-3 pt-6 bg-gradient-to-t from-black/60 to-transparent text-xs text-white">
+                On-call emergency team · <span class="text-[#34A853] font-semibold">Average triage &lt; 5 min</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hidden sm:block">
+          <div class="relative rounded-xl overflow-hidden">
+            <img src="img/main2.png" alt="Ambulance illustration" class="w-full h-full object-cover">
+            <div class="absolute inset-x-0 bottom-0 px-4 pb-3 pt-6 bg-gradient-to-t from-black/60 to-transparent text-xs text-white">
+              On-call emergency team · <span class="text-[#34A853] font-semibold">Average triage &lt; 5 min</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="max-w-6xl mx-auto px-4 pb-10">
+      <div class="grid gap-6 md:grid-cols-3">
+        <article class="rounded-3xl border border-[#C4DEFF] bg-[#F6FAFF] px-6 py-5 shadow">
+          <h3 class="text-base font-semibold text-slate-900 mb-3">When to go to ER</h3>
+          <ul class="space-y-2 text-sm text-slate-700">
+            <li class="flex space-x-2">
+              <span class="mt-1 h-2 w-2 rounded-full bg-[#4593FF]"></span>
+              <span>Severe chest pain or shortness of breath</span>
+            </li>
+            <li class="flex space-x-2">
+              <span class="mt-1 h-2 w-2 rounded-full bg-[#4593FF]"></span>
+              <span>Loss of consciousness or seizures</span>
+            </li>
+            <li class="flex space-x-2">
+              <span class="mt-1 h-2 w-2 rounded-full bg-[#4593FF]"></span>
+              <span>Heavy bleeding or major injuries</span>
+            </li>
+            <li class="flex space-x-2">
+              <span class="mt-1 h-2 w-2 rounded-full bg-[#4593FF]"></span>
+              <span>Signs of stroke or heart attack</span>
+            </li>
+          </ul>
+        </article>
+
+        <article class="rounded-3xl border border-[#C4DEFF] bg-[#F6FAFF] px-6 py-5 shadow">
+          <h3 class="text-base font-semibold text-slate-900 mb-3">What to do right now</h3>
+          <ol class="space-y-2 text-sm text-slate-700">
+            <li class="flex space-x-3">
+              <span class="flex h-6 w-6 items-center justify-center rounded-full bg-[#4593FF] text-xs font-semibold text-white">1</span>
+              <span>Call 103</span>
+            </li>
+            <li class="flex space-x-3">
+              <span class="flex h-6 w-6 items-center justify-center rounded-full bg-white text-xs font-semibold text-[#4593FF] border border-[#C4DEFF]">2</span>
+              <span>Ensure safety and stay calm</span>
+            </li>
+            <li class="flex space-x-3">
+              <span class="flex h-6 w-6 items-center justify-center rounded-full bg-white text-xs font-semibold text-[#4593FF] border border-[#C4DEFF]">3</span>
+              <span>State your address and symptoms clearly</span>
+            </li>
+            <li class="flex space-x-3">
+              <span class="flex h-6 w-6 items-center justify-center rounded-full bg-white text-xs font-semibold text-[#4593FF] border border-[#C4DEFF]">4</span>
+              <span>Follow the dispatcher’s instructions</span>
+            </li>
+          </ol>
+        </article>
+
+        <article class="rounded-3xl border border-[#C4DEFF] bg-[#F6FAFF] px-6 py-5 shadow flex flex-col">
+          <h3 class="text-base font-semibold text-slate-900 mb-3">Opening hours</h3>
+          <p class="text-sm text-slate-700 mb-4">
+            The ER reception is always open. Bring an ID if possible.
+          </p>
+
+          <div class="space-y-3 mt-auto">
+            <div class="flex items-center justify-between border border-[#C4DEFF] rounded-2xl bg-white px-3 py-2">
+              <span class="text-sm text-slate-800">ER Desk</span>
+              <span class="text-xs font-semibold text-[#4593FF]">00:00–24:00</span>
+            </div>
+            <div class="flex items-center justify-between border border-[#C4DEFF] rounded-2xl bg-white px-3 py-2">
+              <span class="text-sm text-slate-800">Hotline</span>
+              <span class="text-xs font-semibold text-[#4593FF]">24/7</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="max-w-6xl mx-auto px-4 pb-14">
+      <div class="grid gap-6 md:grid-cols-2">
+        <div class="flex items-center space-x-4 rounded-3xl border border-[#C4DEFF] bg-[#F6FAFF] px-6 py-4 shadow">
+          <div class="flex h-10 w-10 items-center justify-center rounded-full bg-white border border-[#4593FF]">
+            <span class="text-xl">📍</span>
+          </div>
+          <div>
+            <h4 class="text-sm font-semibold text-slate-900">Address</h4>
+            <p class="text-sm text-slate-700">45 SomeThe St, NY</p>
+          </div>
+        </div>
+
+        <div class="flex items-center space-x-4 rounded-3xl border border-[#C4DEFF] bg-[#F6FAFF] px-6 py-4 shadow">
+          <div class="flex h-10 w-10 items-center justify-center rounded-full bg-white border border-[#4593FF]">
+            <span class="text-xl">💊</span>
+          </div>
+          <div>
+            <h4 class="text-sm font-semibold text-slate-900">Nearest pharmacy</h4>
+            <p class="text-sm text-slate-700">
+              300 m from the clinic, daily 08:00–22:00
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-[#F5FAFF] border-t border-[#C4DEFF]">
+    <div class="max-w-6xl mx-auto px-4 py-8">
+      <div class="grid gap-8 md:grid-cols-4 items-start">
+        <div class="space-y-3">
+          <a href="index.html" class="inline-flex items-center space-x-2">
+            <img src="img/logo-3.png" alt="HealthSpecialist logo" class="h-7 w-auto">
+          </a>
+          <p class="text-xs text-slate-600 max-w-xs">
+            Comprehensive care for your family, with emergency support whenever you need it.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-semibold tracking-wide text-slate-500 uppercase mb-3">Services</h4>
+          <ul class="space-y-1.5 text-sm text-slate-700">
+            <li><a href="#" class="hover:text-[#4593FF]">Family Medicine</a></li>
+            <li><a href="#" class="hover:text-[#4593FF]">Internal Medicine</a></li>
+            <li><a href="#" class="hover:text-[#4593FF]">Cardiology</a></li>
+            <li><a href="#" class="hover:text-[#4593FF]">Physical Therapy</a></li>
           </ul>
         </div>
-        <a href="#">CONTACT</a>
-      </nav>
 
-      <div class="auth-desktop">
-        <a class="login" href="#">LOG IN</a>
-        <a class="btn btn-outline-white" href="#">SIGN UP</a>
+        <div>
+          <h4 class="text-xs font-semibold tracking-wide text-slate-500 uppercase mb-3">Services</h4>
+          <ul class="space-y-1.5 text-sm text-slate-700">
+            <li><a href="#" class="hover:text-[#4593FF]">Phillis K Vance MD</a></li>
+            <li><a href="#" class="hover:text-[#4593FF]">Stanley K Hudson MD</a></li>
+            <li><a href="#" class="hover:text-[#4593FF]">Kevin D Malone MD</a></li>
+            <li><a href="#" class="hover:text-[#4593FF]">Angela S Martin MD</a></li>
+          </ul>
+        </div>
+
+        <div class="space-y-3">
+          <h4 class="text-xs font-semibold tracking-wide text-slate-500 uppercase">Contact</h4>
+          <a href="tel:+14041234567" class="inline-flex items-center space-x-2 rounded-md bg-[#4593FF] px-4 py-2 text-sm font-medium text-white shadow hover:bg-[#2f7df5] transition">
+            <span>📞</span>
+            <span>(404)123 - 4567</span>
+          </a>
+        </div>
       </div>
-
-      <button class="hamburger" aria-label="Open menu">☰</button>
     </div>
-  </div>
-</header>
+  </footer>
 
-<section class="hero hero--page">
-  <div class="container hero-grid">
-    <div class="hero-text">
-      <h1>Emergency Care</h1>
-      <p>Our emergency unit operates around the clock. If a situation is life-threatening, call 103 immediately. We coordinate ambulance arrival and fast-track admission to our ER.</p>
-      <div class="hero-cta">
-        <a href="tel:103" class="btn btn-primary cta-call">Call 103</a>
-        <a href="tel:+14041234567" class="btn btn-primary btn-soft cta-call-alt">Clinic hotline</a>
-      </div>
-      <img src="img/main2.png" alt="Ambulance" class="hero-ill hero-ill-mobile">
-    </div>
-    <img src="img/main2.png" alt="Ambulance" class="hero-ill hero-ill-desktop">
-  </div>
-</section>
-
-<section class="container emg-grid">
-  <article class="emg-card">
-    <h3>When to go to the ER</h3>
-    <ul class="emg-list">
-      <li>severe chest pain or shortness of breath</li>
-      <li>loss of consciousness or seizures</li>
-      <li>heavy bleeding or major injuries</li>
-      <li>signs of stroke or heart attack</li>
-    </ul>
-  </article>
-
-  <article class="emg-card">
-    <h3>What to do right now</h3>
-    <ol class="emg-steps">
-      <li>call 103</li>
-      <li>ensure safety and stay calm</li>
-      <li>state your address and symptoms</li>
-      <li>follow the dispatcher’s instructions</li>
-    </ol>
-  </article>
-
-  <article class="emg-card">
-    <h3>Opening hours</h3>
-    <p>The ER reception is always open. Bring an ID if possible.</p>
-    <div class="emg-hours">
-      <div><span>ER Desk</span><span>00:00–24:00</span></div>
-      <div><span>Hotline</span><span>24/7</span></div>
-    </div>
-  </article>
-</section>
-
-<section class="container emg-info-row">
-  <div class="info-box">
-    <h4>Address</h4>
-    <p>45 SomeThe St, NY</p>
-  </div>
-  <div class="info-box">
-    <h4>Nearest pharmacy</h4>
-    <p>300 m from the clinic, daily 08:00–22:00</p>
-  </div>
-</section>
-
-<footer class="site-footer">
-  <div class="container foot-grid">
-    <div class="foot-logo">
-      <a class="logo logo-foot" href="index.html">
-        <img src="img/logo-2.png" alt="Logo">
-      </a>
-    </div>
-    <div class="foot-col">
-      <h4>SERVICES</h4>
-      <ul class="foot-list">
-        <li><a href="#">Family Medicine</a></li>
-        <li><a href="#">Internal Medicine</a></li>
-        <li><a href="#">Cardiology</a></li>
-        <li><a href="#">Physical Therapy</a></li>
-      </ul>
-    </div>
-    <div class="foot-col">
-      <h4>SERVICES</h4>
-      <ul class="foot-list">
-        <li><a href="#">Phillis K Vance MD</a></li>
-        <li><a href="#">Stanley K Hudson MD</a></li>
-        <li><a href="#">Kevin D Malone MD</a></li>
-        <li><a href="#">Angela S Martin MD</a></li>
-      </ul>
-    </div>
-    <div class="foot-contact">
-      <h4>CONTACT</h4>
-      <a class="phone-pill" href="tel:+14041234567">📞 (404)123 - 4567</a>
-    </div>
-  </div>
-</footer>
+  <script>
+    const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  </script>
 </body>
 </html>
